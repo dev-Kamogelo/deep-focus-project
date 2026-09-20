@@ -1,13 +1,57 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>deep-focus</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" class=" gap-10 flex flex-col max-w-300 m-auto">
+      <header class="p-3 shadow">
+        <nav class="flex justify-between">
+          <a href="#" class="font-semibold text-xl">LOGO</a>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="currentColor"><path d="m628.85-281.69 46.77-46.77q5.61-5.58 5.61-13.02 0-7.44-5.61-13.06L531.54-499.23q5.15-11.38 7.73-23.73t2.58-27.5q0-54.94-39.15-93.97t-94.24-39.03q-15.84 0-30.88 3.89t-29.19 10.8l88.61 89-59.08 59.08-89.38-89q-6.85 14.08-10.77 29.34-3.92 15.27-3.92 31.12 0 55.09 39.14 94.24 39.15 39.14 94.24 39.14 14.11 0 26.59-2.77 12.49-2.77 24.64-7.53l144.69 144.07q5.62 5.62 12.85 5.81 7.23.19 12.85-5.42ZM480.07-100q-78.84 0-148.21-29.92t-120.68-81.21q-51.31-51.29-81.25-120.63Q100-401.1 100-479.93q0-78.84 29.92-148.21t81.21-120.68q51.29-51.31 120.63-81.25Q401.1-860 479.93-860q78.84 0 148.21 29.92t120.68 81.21q51.31 51.29 81.25 120.63Q860-558.9 860-480.07q0 78.84-29.92 148.21t-81.21 120.68q-51.29 51.31-120.63 81.25Q558.9-100 480.07-100Zm-.07-60q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        </button>
+        </nav>
+      </header>
+
+      <main class="flex flex-col justify-center gap-10 m-auto">
+
+        <section class="flex gap-2">
+          <button id="move-to-focus" class="top-indicator">Focus</button>
+          <button id="move-to-short-break" class="top-indicator">Short Break</button>
+          <button id="move-to-long-break" class="top-indicator">Long Break</button>
+        </section>
+
+        <section class="flex items-center justify-center m-auto">
+          <div class="border rounded-[50%] px-20 py-24 flex flex-col gap-4">
+            <h1 id="time-display" class="font-semibold text-6xl">25:00</h1>
+            <p id="session-objective">Deep Coding Session</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="flex gap-2 justify-center">
+            <div class="flex gap-2">
+              <button id="start-session" class="rounded border p-1.5 w-28 text-start flex gap-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" wi  dth="28px" fill="currentColor"><path d="M340-236.16v-487.68L723.07-480 340-236.16ZM400-480Zm0 134 210.77-134L400-614v268Z"/></svg>
+                <span>Start</span>
+              </button>
+              <button id="pause-session" class="border p-1.5 text-start rounded">Pause</button>
+            </div>
+
+            <button id="reset-session" class="hidden">Reset</button>
+            <button id="skip-session" class="hidden">Skip</button>
+          </div>
+        </section>
+
+        <section class="border p-3 rounded-2xl">
+          <p>Session Progress</p>
+          <div id="session-progress"></div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/app.ts"></script>
   </body>
 </html>

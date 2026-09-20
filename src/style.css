@@ -1,1 +1,4 @@
 @import 'tailwindcss';
+
+.top-indicator{ border: 1px solid; padding: 6px; width: 100px; border-radius: 4px;}
+.function{ border: 1px solid; padding: 6px;}
